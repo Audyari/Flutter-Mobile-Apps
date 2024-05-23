@@ -1,16 +1,15 @@
-Perkenalan Flutter
+Install VSCode & Flutter
 
-============================
+=============================
 
-Flutter adalah framework open-source yang dikembangkan oleh Google untuk membangun aplikasi multi-platform. Flutter menggunakan bahasa pemrograman Dart sebagai bahasa utamanya
+1. Install Visual Studio Code (VSCode):
+2. Install Flutter:
+Kunjungi website resmi Flutter di https://flutter.dev/
 
+3.Mengintegrasikan VSCode dengan Flutter:
+Buka VSCode, lalu pergi ke menu Extensions (Ctrl+Shift+X).
+Cari dan install extension "Flutter" dari Dart Team.
+
+4. https://dart.dev/
 
 ===================================
-
-1.Cross-platform: Flutter memungkinkan Anda untuk membangun aplikasi yang berjalan di berbagai platform seperti Android, iOS, web, dan desktop dengan satu codebase. Ini sangat efisien dibandingkan harus membangun aplikasi secara terpisah untuk masing-masing platform.
-2.Performa yang tinggi: Flutter menggunakan pendekatan "widget-based" yang memungkinkan aplikasi berjalan dengan sangat lancar dan responsif.
-3.Produktivitas yang tinggi: Flutter menawarkan pengalaman pengembangan yang menyenangkan dengan fitur Hot Reload, yang memungkinkan Anda melihat perubahan yang Anda buat secara instan tanpa harus memulai ulang aplikasi.
-4.Komunitas yang aktif: Flutter memiliki komunitas pengembang yang sangat aktif, yang menyediakan banyak paket dan tools pendukung untuk mempercepat pengembangan aplikasi.
-5.Open-source: Flutter adalah proyek open-source, yang artinya kode sumber-nya dapat diakses dan dikontribusikan oleh siapa saja.
-
-=========================================
