@@ -1,28 +1,45 @@
-Run Project
+Struktur Project
 
-====================
+===============================
 
-1. Pastikan Perangkat Target Terhubung:
-Pastikan Anda telah mengatur emulator Android atau menghubungkan perangkat Android/iOS fisik ke komputer Anda.
 
-2. Buka Proyek di Visual Studio Code (VSCode):
-Buka folder proyek Flutter Anda di VSCode.
+1. android/:
+Berisi konfigurasi spesifik untuk platform Android.
+Meliputi file Gradle, AndroidManifest.xml, dan kode java/kotlin.
 
-3. Jalankan Proyek:
-Buka file main.dart yang terletak di folder lib.
-Klik tombol "Run" di bilah atas VSCode.
-Jika ini adalah kali pertama Anda menjalankan proyek, VSCode mungkin akan meminta Anda untuk memilih perangkat target. Pilih perangkat yang ingin Anda gunakan.
+2. build/:
+Berisi file yang dihasilkan selama proses build aplikasi.
+Folder ini tidak boleh diversi-kontrol.
 
-4.Monitor Proses Kompilasi dan Jalankan Aplikasi:
-VSCode akan mulai mengkompilasi proyek Flutter Anda.
-Setelah proses kompilasi selesai, aplikasi akan dijalankan di perangkat target yang Anda pilih.
+3. ios/:
+Berisi konfigurasi spesifik untuk platform iOS.
+Meliputi project Xcode, Info.plist, dan kode Swift.
 
-5. Pantau Aplikasi yang Berjalan:
-Di VSCode, Anda dapat melihat output log aplikasi di panel "Terminal" atau "Debug Console".
-Jika terjadi error atau masalah saat menjalankan aplikasi, Anda dapat memeriksa log untuk mencari penyebabnya.
 
-6. Membuat Perubahan dan Memperbarui Aplikasi:
-Saat Anda membuat perubahan pada kode aplikasi, VSCode akan secara otomatis memperbarui aplikasi yang berjalan di perangkat target (fitur "Hot Reload").
-Ini memungkinkan Anda untuk melihat perubahan secara langsung tanpa harus menghentikan dan menjalankan ulang aplikasi.
+4. lib/:  (penting )
+Folder utama untuk menyimpan kode Dart.
+main.dart adalah file entry point aplikasi.
 
-=====================================================
+
+5. test/:
+Berisi unit test dan widget test untuk aplikasi.
+
+6. .gitignore:
+Mendefiniskan file dan folder yang tidak boleh dimasukkan ke kontrol versi.
+
+7. .metadata:
+Berisi informasi metadata proyek Flutter.
+
+8. .packages:
+Berisi daftar paket Dart yang digunakan dalam proyek.
+
+9. pubspec.lock:
+Berisi versi spesifik dari setiap paket yang digunakan.
+Dihasilkan secara otomatis dan tidak boleh diedit secara manual.
+
+10 pubspec.yaml: ( penting )
+Konfigurasi proyek, seperti nama, versi, dependensi, dan aset.
+
+
+
+=================================================================
