@@ -1,28 +1,28 @@
-New Project
+Run Project
 
-======================
+====================
 
-1. Buka Visual Studio Code (VSCode):
-Pastikan Anda sudah menginstall extension Flutter di VSCode.
+1. Pastikan Perangkat Target Terhubung:
+Pastikan Anda telah mengatur emulator Android atau menghubungkan perangkat Android/iOS fisik ke komputer Anda.
 
+2. Buka Proyek di Visual Studio Code (VSCode):
+Buka folder proyek Flutter Anda di VSCode.
 
-2. Buat proyek Flutter baru:
-Buka terminal/command prompt di VSCode.
-Jalankan perintah flutter create my_app untuk membuat proyek Flutter baru dengan nama "my_app". Ganti "my_app" dengan nama proyek yang Anda inginkan.
-Tunggu hingga proses pembuatan proyek selesai.
+3. Jalankan Proyek:
+Buka file main.dart yang terletak di folder lib.
+Klik tombol "Run" di bilah atas VSCode.
+Jika ini adalah kali pertama Anda menjalankan proyek, VSCode mungkin akan meminta Anda untuk memilih perangkat target. Pilih perangkat yang ingin Anda gunakan.
 
-3. Buka dan Jalankan Proyek:
-Setelah proses pembuatan proyek selesai, buka folder "my_app" (atau nama proyek yang Anda pilih) di VSCode.
-Buka file main.dart yang terletak di dalam folder lib.
-Klik tombol "Run" di bilah atas VSCode untuk menjalankan proyek Flutter.
-Pilih perangkat target (misalnya emulator Android) untuk menjalankan aplikasi.
+4.Monitor Proses Kompilasi dan Jalankan Aplikasi:
+VSCode akan mulai mengkompilasi proyek Flutter Anda.
+Setelah proses kompilasi selesai, aplikasi akan dijalankan di perangkat target yang Anda pilih.
 
+5. Pantau Aplikasi yang Berjalan:
+Di VSCode, Anda dapat melihat output log aplikasi di panel "Terminal" atau "Debug Console".
+Jika terjadi error atau masalah saat menjalankan aplikasi, Anda dapat memeriksa log untuk mencari penyebabnya.
 
-4. Struktur Proyek:
-lib/main.dart: File utama yang berisi kode aplikasi Flutter.
-test/: Folder untuk menyimpan unit test.
-android/: Folder yang berisi konfigurasi Android.
-ios/: Folder yang berisi konfigurasi iOS.
-pubspec.yaml: File konfigurasi paket dan dependensi.
+6. Membuat Perubahan dan Memperbarui Aplikasi:
+Saat Anda membuat perubahan pada kode aplikasi, VSCode akan secara otomatis memperbarui aplikasi yang berjalan di perangkat target (fitur "Hot Reload").
+Ini memungkinkan Anda untuk melihat perubahan secara langsung tanpa harus menghentikan dan menjalankan ulang aplikasi.
 
-====================================================
+=====================================================
