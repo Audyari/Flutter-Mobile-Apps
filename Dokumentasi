@@ -1,45 +1,107 @@
-Struktur Project
+MaterialApp & Scaffold
 
-===============================
-
-
-1. android/:
-Berisi konfigurasi spesifik untuk platform Android.
-Meliputi file Gradle, AndroidManifest.xml, dan kode java/kotlin.
-
-2. build/:
-Berisi file yang dihasilkan selama proses build aplikasi.
-Folder ini tidak boleh diversi-kontrol.
-
-3. ios/:
-Berisi konfigurasi spesifik untuk platform iOS.
-Meliputi project Xcode, Info.plist, dan kode Swift.
+==============================
 
 
-4. lib/:  (penting )
-Folder utama untuk menyimpan kode Dart.
-main.dart adalah file entry point aplikasi.
+1. https://m3.material.io/get-started
 
 
-5. test/:
-Berisi unit test dan widget test untuk aplikasi.
+contoh code yg jalan : 
 
-6. .gitignore:
-Mendefiniskan file dan folder yang tidak boleh dimasukkan ke kontrol versi.
-
-7. .metadata:
-Berisi informasi metadata proyek Flutter.
-
-8. .packages:
-Berisi daftar paket Dart yang digunakan dalam proyek.
-
-9. pubspec.lock:
-Berisi versi spesifik dari setiap paket yang digunakan.
-Dihasilkan secara otomatis dan tidak boleh diedit secara manual.
-
-10 pubspec.yaml: ( penting )
-Konfigurasi proyek, seperti nama, versi, dependensi, dan aset.
+ home: const Scaffold(
+        body: Center(
+          child: Text('Hello, World!'),
+        ),
+      ),
 
 
+================================
 
-=================================================================
+
+code lengkap nya di main.dart :
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+
+     
+
+      home: const Scaffold(
+        body: Center(
+          child: Text('Hello, World!'),
+        ),
+      ),
+   
+   
+    );
+  }
+}
+
+
+
+===================================================
+
+
+code yg sudah di rapikan : 
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Audyari W'),
+      ),
+      body: const Center(
+        child: Text('Hello, Audyari W'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Aksi saat tombol ditekan
+        },
+        child: const Icon(Icons.add),
+      ),
+    );
+  }
+}
+
+
+
+=========================================================
