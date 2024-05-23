@@ -1,80 +1,62 @@
-AppBar & Properties
+Nested Widget & Icon Button
 
-=================================
+==================================
 
-1. title: Ini adalah teks yang ditampilkan di tengah AppBar.
+Nested Widget adalah ketika satu widget diletakkan di dalam widget lain, menciptakan struktur widget yang bertingkat.
 
-2. leading: Ini adalah widget yang ditampilkan di awal AppBar, biasanya digunakan untuk tombol menu atau kembali.
-
-3. actions: Ini adalah daftar widget yang ditampilkan di akhir AppBar, biasanya digunakan untuk tombol-tombol tambahan seperti search atau notifikasi.
-
-4. backgroundColor: Ini adalah warna latar belakang AppBa
-
-5. elevation: Ini adalah ketinggian bayangan di bawah AppBar, yang memberi efek 3D.
-
-6. centerTitle: Ini mengatur pemusatan judul AppBar.
+IconButton adalah salah satu jenis widget di Flutter yang digunakan untuk menampilkan ikon dan menangani aksi pengguna, seperti klik atau tap.
 
 
-==========================================
+===============================
 
-code pake AppBar dan Propertis nya : 
+berikut contoh nya : di dalam windet app bar ada widget icon :
+
+*Scaffold
+  **AppBar
+    ***IconButton
+  **Body
+    ***Center
+      ****IconButton
+
+---------
 
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(),
+      title: 'Contoh Nested Widget dan IconButton',
+      home: HomePage(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('My App'),
+        title: const Text('Judul Aplikasi'),
         leading: IconButton(
           icon: const Icon(Icons.menu),
           onPressed: () {
             // Aksi saat tombol menu ditekan
+            // print('Tombol menu ditekan');
           },
         ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.search),
-            onPressed: () {
-              // Aksi saat tombol search ditekan
-            },
-          ),
-          IconButton(
-            icon: const Icon(Icons.notifications),
-            onPressed: () {
-              // Aksi saat tombol notifikasi ditekan
-            },
-          ),
-        ],
-        backgroundColor: Colors.deepPurple,
-        elevation: 4,
-        centerTitle: true,
       ),
-      body: SafeArea(
-        child: Center(
-          child: Text('Selamat Datang di Aplikasi Saya'),
+      body: Center(
+        child: IconButton(
+          icon: const Icon(Icons.thumb_up),
+          onPressed: () {
+            // Aksi saat tombol thumb up ditekan
+            // print('Tombol thumb up ditekan');
+          },
         ),
       ),
     );
@@ -82,25 +64,16 @@ class MyHomePage extends StatelessWidget {
 }
 
 
-===============================================================
+==============================================================
 
-title: Widget yang ditampilkan sebagai judul AppBar.
-leading: Widget yang ditampilkan di sisi kiri AppBar.
-actions: List of widgets yang ditampilkan di sisi kanan AppBar.
-flexibleSpace: Widget yang ditampilkan di belakang judul dan actions, dapat digunakan untuk efek paralaks.
-bottom: Widget yang ditampilkan di bawah AppBar.
-elevation: Ketinggian bayangan di bawah AppBar.
-shadowColor: Warna bayangan di bawah AppBar.
-shape: Bentuk AppBar.
-backgroundColor: Warna latar belakang AppBar.
-brightness: Kecerahan AppBar (Brightness.light atau Brightness.dark).
-iconTheme: Tema ikon di AppBar.
-actionsIconTheme: Tema ikon actions di AppBar.
-textTheme: Tema teks di AppBar.
-centerTitle: Mengatur pemusatan judul AppBar.
-titleSpacing: Jarak antara judul dan leading/actions.
-toolbarOpacity: Transparansi toolbar AppBar.
-bottomOpacity: Transparansi bottom AppBar.
+Menghasilkan File APK
+
+Membuild Aplikasi
+Buka terminal atau command prompt di direktori proyek Flutter Anda.
+Jalankan perintah flutter build apk untuk membangun file APK.
 
 
-=======================================
+Setelah proses build selesai, Anda akan menemukan file APK di direktori build/app/outputs/apk/release/.
+File APK ini adalah hasil build aplikasi Anda yang siap dijalankan di perangkat Android.
+
+============================================================
