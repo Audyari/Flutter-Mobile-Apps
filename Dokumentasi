@@ -1,23 +1,28 @@
-Install Android Studio & Flutter
+New Project
 
-====================================
+======================
 
-1. Install Android Studio:
-Kunjungi website resmi Android Studio di https://developer.android.com/studio
-
-2. Mengonfigurasi Android SDK di Flutter:
-Buka Android Studio dan biarkan proses instalasi selesai.
-Buka terminal/command prompt dan jalankan perintah flutter doctor untuk memeriksa apakah semua dependensi Flutter sudah terinstal dengan benar.
-Jika Flutter belum dapat menemukan Android SDK, Anda perlu mengonfigurasinya secara manual.
-Buka Android Studio, lalu pergi ke menu "File" > "Settings" (Windows/Linux) atau "Android Studio" > "Preferences" (macOS).
-Pada sidebar, pilih "appearance & Behavior" > "System Settings" > "Android SDK".
-Pastikan "Android SDK Location" menunjuk ke lokasi instalasi Android SDK yang valid.
-Setelah itu, kembali ke terminal/command prompt dan jalankan perintah flutter doctor lagi untuk memastikan Android SDK telah dikonfigurasi dengan benar.
+1. Buka Visual Studio Code (VSCode):
+Pastikan Anda sudah menginstall extension Flutter di VSCode.
 
 
-3. Mencoba membuat proyek Flutter:
-Buka Visual Studio Code (atau IDE Flutter yang Anda gunakan).
-Buat proyek Flutter baru atau buka proyek yang sudah ada.
-Pastikan proyek Anda dapat dibangun dan dijalankan di emulator Android tanpa masalah.
+2. Buat proyek Flutter baru:
+Buka terminal/command prompt di VSCode.
+Jalankan perintah flutter create my_app untuk membuat proyek Flutter baru dengan nama "my_app". Ganti "my_app" dengan nama proyek yang Anda inginkan.
+Tunggu hingga proses pembuatan proyek selesai.
 
-=======================================================
+3. Buka dan Jalankan Proyek:
+Setelah proses pembuatan proyek selesai, buka folder "my_app" (atau nama proyek yang Anda pilih) di VSCode.
+Buka file main.dart yang terletak di dalam folder lib.
+Klik tombol "Run" di bilah atas VSCode untuk menjalankan proyek Flutter.
+Pilih perangkat target (misalnya emulator Android) untuk menjalankan aplikasi.
+
+
+4. Struktur Proyek:
+lib/main.dart: File utama yang berisi kode aplikasi Flutter.
+test/: Folder untuk menyimpan unit test.
+android/: Folder yang berisi konfigurasi Android.
+ios/: Folder yang berisi konfigurasi iOS.
+pubspec.yaml: File konfigurasi paket dan dependensi.
+
+====================================================
