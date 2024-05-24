@@ -1,19 +1,20 @@
-Basic UI Layout
+Margin & Padding
 
 penting : flutter build apk
 
 ======================
 
-1. buat SafeArea
-2. didalam safearea ada container
-3. pilih row atau Column
-4. baru children: <Widget>[
+1. Margin:
+Margin adalah jarak di luar konten dari widget.
+Margin memberi jarak antara widget dengan widget lainnya.
+Margin tidak mempengaruhi ukuran widget, tetapi memengaruhi posisinya.
+
+2. Padding: - Padding adalah jarak di dalam konten dari widget. 
+- Padding memberi jarak antara konten widget dengan batas widget. - Padding mempengaruhi ukuran widget
 
 
-======================
 
-contoh sederhana : 
-
+contoh margin : 
 
 import 'package:flutter/material.dart';
 
@@ -50,22 +51,29 @@ class HomePage extends StatelessWidget {
         child: Container(
           alignment: Alignment.center, // Mengatur posisi container di tengah
           child: Column(
-            mainAxisAlignment:
-                MainAxisAlignment.center, // Mengatur posisi vertikal ke tengah
-            crossAxisAlignment: CrossAxisAlignment
-                .center, // Mengatur posisi horizontal ke tengah
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Image.asset(
-                'assets/images/my_image.png',
-                width: 200,
-                height: 200,
-                fit: BoxFit.contain,
+              Container(
+                margin: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(16.0),
+                color: Colors.blue,
+                child: const Text(
+                  'Ini adalah contoh penggunaan margin',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
-              ElevatedButton(
-                onPressed: () {},
-                child: const Text('Tekan Saya'),
+              const SizedBox(height: 24.0),
+              // Contoh penggunaan padding
+              Container(
+                margin: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.all(16.0),
+                color: Colors.green,
+                child: const Text(
+                  'Ini adalah contoh penggunaan padding',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
-              const Text('Tekan Saya'),
             ],
           ),
         ),
@@ -76,9 +84,76 @@ class HomePage extends StatelessWidget {
 
 
 
-==================================================
+================================
+
+contoh Padding : 
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Contoh Nested Widget dan IconButton',
+      debugShowCheckedModeBanner: false,
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  final TextEditingController myController = TextEditingController();
+
+  HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true, // Mengatur judul AppBar di tengah
+        title: const Text('Judul Aplikasi'),
+      ),
+      body: SafeArea(
+        child: Container(
+          alignment: Alignment.center, // Mengatur posisi container di tengah
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              const Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Text('Teks dengan padding'),
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 8.0),
+                child: Icon(Icons.favorite),
+              ),
+              const SizedBox(
+                  height:
+                      10.0), 
+              const Padding(
+                padding: EdgeInsets.fromLTRB(0, 16.0, 0, 0),
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: Text('Tombol'),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
 
 
 
 
+==================================
 
