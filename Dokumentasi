@@ -1,30 +1,19 @@
-Image Widget
+Basic UI Layout
 
 penting : flutter build apk
 
 ======================
 
-Selain itu, Anda juga dapat mengatur berbagai properti pada Image Widget, seperti:
+1. buat SafeArea
+2. didalam safearea ada container
+3. pilih row atau Column
+4. baru children: <Widget>[
 
-* width dan height: untuk mengatur ukuran gambar.
-* fit: untuk mengatur cara gambar disesuaikan dalam ruang yang tersedia.
-* alignment: untuk mengatur posisi gambar dalam ruang yang tersedia.
-*repeat: untuk mengatur cara gambar diulang jika ukurannya lebih kecil dari ruang yang tersedia.
 
-===================
+======================
 
 contoh sederhana : 
 
-Image.asset(
-  'assets/images/my_image.png',
-  width: 200,
-  height: 200,
-  fit: BoxFit.contain,
-)
-
-=================================
-
-contoh 2 gambar : 
 
 import 'package:flutter/material.dart';
 
@@ -54,42 +43,31 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Aplikasi Sederhana'),
-        leading: const Icon(Icons.menu),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.search),
-            onPressed: () {
-              // Aksi saat tombol search ditekan
-            },
-          ),
-          IconButton(
-            icon: const Icon(Icons.more_vert),
-            onPressed: () {
-              // Aksi saat tombol menu ditekan
-            },
-          ),
-        ],
+        centerTitle: true, // Mengatur judul AppBar di tengah
+        title: const Text('Judul Aplikasi'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.end, // Rata kanan
-          children: [
-            Image.asset(
-              'assets/images/my_image.png',
-              width: 200,
-              height: 200,
-              fit: BoxFit.contain,
-            ),
-            const SizedBox(height: 16.0), // Jarak antar gambar
-            Image.asset(
-              'assets/images/my_image.png',
-              width: 200,
-              height: 200,
-              fit: BoxFit.contain,
-            ),
-          ],
+      body: SafeArea(
+        child: Container(
+          alignment: Alignment.center, // Mengatur posisi container di tengah
+          child: Column(
+            mainAxisAlignment:
+                MainAxisAlignment.center, // Mengatur posisi vertikal ke tengah
+            crossAxisAlignment: CrossAxisAlignment
+                .center, // Mengatur posisi horizontal ke tengah
+            children: <Widget>[
+              Image.asset(
+                'assets/images/my_image.png',
+                width: 200,
+                height: 200,
+                fit: BoxFit.contain,
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                child: const Text('Tekan Saya'),
+              ),
+              const Text('Tekan Saya'),
+            ],
+          ),
         ),
       ),
     );
@@ -98,4 +76,9 @@ class HomePage extends StatelessWidget {
 
 
 
-===========================================
+==================================================
+
+
+
+
+
