@@ -1,32 +1,101 @@
-Import Image
+Image Widget
+
+penting : flutter build apk
 
 ======================
 
-1. ubah pubspec.yaml :
+Selain itu, Anda juga dapat mengatur berbagai properti pada Image Widget, seperti:
 
-uses-material-design: true
-  assets:
-    - assets/images/
+* width dan height: untuk mengatur ukuran gambar.
+* fit: untuk mengatur cara gambar disesuaikan dalam ruang yang tersedia.
+* alignment: untuk mengatur posisi gambar dalam ruang yang tersedia.
+*repeat: untuk mengatur cara gambar diulang jika ukurannya lebih kecil dari ruang yang tersedia.
 
+===================
 
-2.  contoh tampilkan sederhana : 
+contoh sederhana : 
 
-Widget build(BuildContext context) {
-  return Scaffold(
-    body: Center(
-      child: Image.asset('assets/my_image.png'),
-    ),
-  );
+Image.asset(
+  'assets/images/my_image.png',
+  width: 200,
+  height: 200,
+  fit: BoxFit.contain,
+)
+
+=================================
+
+contoh 2 gambar : 
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
 }
 
-3. contoh lain menggunakkna link web :
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-Widget build(BuildContext context) {
-  return Scaffold(
-    body: Center(
-      child: Image.network('https://example.com/image.jpg'),
-    ),
-  );
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Contoh Nested Widget dan IconButton',
+      debugShowCheckedModeBanner: false,
+      home: HomePage(),
+    );
+  }
 }
 
-======================================
+class HomePage extends StatelessWidget {
+  final TextEditingController myController = TextEditingController();
+
+  HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Aplikasi Sederhana'),
+        leading: const Icon(Icons.menu),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {
+              // Aksi saat tombol search ditekan
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.more_vert),
+            onPressed: () {
+              // Aksi saat tombol menu ditekan
+            },
+          ),
+        ],
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.end, // Rata kanan
+          children: [
+            Image.asset(
+              'assets/images/my_image.png',
+              width: 200,
+              height: 200,
+              fit: BoxFit.contain,
+            ),
+            const SizedBox(height: 16.0), // Jarak antar gambar
+            Image.asset(
+              'assets/images/my_image.png',
+              width: 200,
+              height: 200,
+              fit: BoxFit.contain,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+===========================================
