@@ -1,50 +1,11 @@
-MainAxisAlignment property
+remove cache & custom fonts
 
-==========================
+==============================
 
-axisAlignment adalah properti yang dapat digunakan pada widget Flex (seperti Row, Column, Wrap) 
-untuk mengontrol perataan konten sepanjang sumbu utama (main axis) widget.
+Menghapus Cache:
+Pada Android:
+Buka Android Studio.
+Buka menu File > Invalidate Caches/Restart.
+Pilih opsi "Invalidate and Restart" dan klik "Invalidate".
 
-Berikut adalah nilai-nilai yang dapat digunakan untuk axisAlignment:
-
-1. start: Meratakan konten di awal sumbu utama (kiri untuk Row, atas untuk Column).
-2. end: Meratakan konten di akhir sumbu utama (kanan untuk Row, bawah untuk Column).
-3. center: Meratakan konten di tengah sumbu utama.
-4. spaceBetween: Meratakan konten dengan jarak yang sama di antara elemen.
-5. spaceAround: Meratakan konten dengan jarak yang sama di sekitar elemen.
-6. spaceEvenly: Meratakan konten dengan jarak yang sama di antara dan di sekitar elemen.
-
-1. start :
-
-Column(
-  mainAxisAlignment: MainAxisAlignment.start, // Rata atas
-  children: [
-    Text('Teks 1'),
-    Text('Teks 2'),
-    Text('Teks 3'),
-  ],
-)
-
-2. end 
-
-Row(
-  mainAxisAlignment: MainAxisAlignment.end, // Rata kanan
-  children: [
-    Text('Teks 1'),
-    Text('Teks 2'),
-    Text('Teks 3'),
-  ],
-)
-
-3. spaceEvenly
-
-Wrap(
-  alignment: WrapAlignment.spaceEvenly, // Rata dengan jarak yang sama
-  children: [
-    Text('Teks 1'),
-    Text('Teks 2'),
-    Text('Teks 3'),
-  ],
-)
-
-====================================================
+===================================
