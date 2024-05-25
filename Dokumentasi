@@ -1,20 +1,12 @@
-Margin & Padding
+Image Widget
 
 penting : flutter build apk
 
 ======================
 
-1. Margin:
-Margin adalah jarak di luar konten dari widget.
-Margin memberi jarak antara widget dengan widget lainnya.
-Margin tidak mempengaruhi ukuran widget, tetapi memengaruhi posisinya.
+keanehan pas import gambar :
 
-2. Padding: - Padding adalah jarak di dalam konten dari widget. 
-- Padding memberi jarak antara konten widget dengan batas widget. - Padding mempengaruhi ukuran widget
-
-
-
-contoh margin : 
+gambar gk keluar : code nya
 
 import 'package:flutter/material.dart';
 
@@ -54,25 +46,11 @@ class HomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Container(
-                margin: const EdgeInsets.all(16.0),
-                padding: const EdgeInsets.all(16.0),
-                color: Colors.blue,
-                child: const Text(
-                  'Ini adalah contoh penggunaan margin',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              const SizedBox(height: 24.0),
-              // Contoh penggunaan padding
-              Container(
-                margin: const EdgeInsets.all(16.0),
-                padding: const EdgeInsets.all(16.0),
-                color: Colors.green,
-                child: const Text(
-                  'Ini adalah contoh penggunaan padding',
-                  style: TextStyle(color: Colors.white),
-                ),
+              Image.asset(
+                '/images/Gambar.png',
+                width: 200,
+                height: 200,
+                // fit: BoxFit.contain,
               ),
             ],
           ),
@@ -83,150 +61,101 @@ class HomePage extends StatelessWidget {
 }
 
 
+===============================================
 
-================================
+setup :  pubspec.yaml
 
-contoh Padding : 
+name: myapp
+description: "A new Flutter project."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-import 'package:flutter/material.dart';
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# In Windows, build-name is used as the major, minor, and patch parts
+# of the product and file versions while build-number is used as the build suffix.
+version: 1.0.0+1
 
-void main() {
-  runApp(const MyApp());
-}
+environment:
+  sdk: '>=3.4.0-282.3.beta <4.0.0'
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Contoh Nested Widget dan IconButton',
-      debugShowCheckedModeBanner: false,
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  final TextEditingController myController = TextEditingController();
-
-  HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true, // Mengatur judul AppBar di tengah
-        title: const Text('Judul Aplikasi'),
-      ),
-      body: SafeArea(
-        child: Container(
-          alignment: Alignment.center, // Mengatur posisi container di tengah
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              const Padding(
-                padding: EdgeInsets.all(16.0),
-                child: Text('Teks dengan padding'),
-              ),
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 8.0),
-                child: Icon(Icons.favorite),
-              ),
-              const SizedBox(
-                  height:
-                      10.0), 
-              const Padding(
-                padding: EdgeInsets.fromLTRB(0, 16.0, 0, 0),
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text('Tombol'),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
 
 
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.6
 
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
 
-==================================
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^3.0.0
 
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
 
-mengubah margin pading di dalam container : 
+# The following section is specific to Flutter packages.
+flutter:
 
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
 
-import 'package:flutter/material.dart';
+  # To add assets to your application, add an assets section, like this:
+assets:
+  - /assets/images/Gambar.png
+  #   - images/a_dot_ham.jpeg
 
-void main() {
-  runApp(const MyApp());
-}
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Contoh Nested Widget dan IconButton',
-      debugShowCheckedModeBanner: false,
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  final TextEditingController myController = TextEditingController();
-
-  HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true, // Mengatur judul AppBar di tengah
-        title: const Text('Judul Aplikasi'),
-      ),
-      body: SafeArea(
-        child: Container(
-            color: Colors.blueAccent, // Mengatur warna container menjadi hitam
-            margin: const EdgeInsets.only(left: 30, right: 30, top: 30, bottom: 30),
-            padding: const EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
-            alignment: Alignment.center, // Mengatur posisi container di tengah
-          child: const Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.all(16.0),
-                child: Text('Teks dengan padding'),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 8.0),
-                child: Icon(Icons.favorite),
-              ),
-              SizedBox(height: 10.0),
-              Padding(
-                padding: EdgeInsets.fromLTRB(0, 16.0, 0, 0),
-                child: ElevatedButton(
-                  onPressed: null,
-                  child: Text('Tombol'),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+fonts:
+  - family: Poppins
+    fonts:
+    - assets: /assets/fonts/Poppins-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
 
 
 
-===================================================
-
+=-------------------=====================================================
