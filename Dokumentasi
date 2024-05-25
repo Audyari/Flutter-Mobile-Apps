@@ -1,30 +1,103 @@
-Import Fonts
+TextStyle Widget
 
-=============================
+=========================
 
-1. https://fonts.google.com/
+TextStyle adalah Widget di Flutter yang digunakan untuk mengatur gaya teks dalam aplikasi. Ia merupakan 
+salah satu parameter penting yang digunakan dalam berbagai Widget teks, seperti Text, RichText, TextField, dll.
 
-download Poppins
+Berikut beberapa properti yang dapat diatur menggunakan TextStyle:
 
-2. edit yaml :
+1. fontFamily: Menentukan jenis font yang akan digunakan.
+2. fontSize: Mengatur ukuran font.
+3. fontWeight: Mengatur ketebalan font (normal, bold, w100, w200, dll).
+4. fontStyle: Mengatur gaya font (normal, italic).
+5. color: Mengatur warna teks.
+6. backgroundColor: Mengatur warna latar belakang teks.
+7. decoration: Menambahkan dekorasi pada teks (underline, overline, lineThrough).
+8. decorationColor: Mengatur warna dekorasi.
+9. decorationStyle: Mengatur gaya dekorasi (solid, double, dotted, dashed).
+10. letterSpacing: Mengatur jarak antar karakter.
+11. wordSpacing: Mengatur jarak antar kata.
+12. height: Mengatur tinggi baris teks.
+13. locale: Mengatur lokal bahasa yang digunakan.
+14. foreground: Mengatur gradien warna teks.
+15. background: Mengatur gradien warna latar belakang teks.
 
-flutter:
-  fonts:
-    - family: MyCustomFont
-      fonts:
-        - asset: assets/fonts/MyFont.ttf
-        # - asset: assets/fonts/MyFontBold.ttf
-        #   weight: 700
+Contoh penggunaan TextStyle:
 
-3. simple code : 
 
 Text(
-  'This is some text in my custom font',
+  'Hello, World!',
   style: TextStyle(
-    fontFamily: 'MyCustomFont',
-    fontSize: 18.0,
+    fontSize: 24.0,
+    fontWeight: FontWeight.bold,
+    color: Colors.blue,
   ),
 ),
 
 
-============================================
+======================
+
+kode full nya : 
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      title: 'Contoh Nested Widget dan IconButton',
+      debugShowCheckedModeBanner: false,
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: const Text('Judul Aplikasi'),
+      ),
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'Hello, World!',
+                style: TextStyle(
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue,
+                ),
+              ),
+              const SizedBox(height: 16.0),
+              IconButton(
+                icon: const Icon(Icons.favorite),
+                color: Colors.red,
+                onPressed: () {
+                  // Tambahkan aksi yang diinginkan saat ikon ditekan
+                    
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+=====================================================
