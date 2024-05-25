@@ -1,44 +1,19 @@
-TextStyle Widget
+text align & line break
 
 =========================
 
-TextStyle adalah Widget di Flutter yang digunakan untuk mengatur gaya teks dalam aplikasi. Ia merupakan 
-salah satu parameter penting yang digunakan dalam berbagai Widget teks, seperti Text, RichText, TextField, dll.
+text align  : 
 
-Berikut beberapa properti yang dapat diatur menggunakan TextStyle:
+Anda dapat mengatur penyelarasan teks menggunakan properti textAlign pada widget Text. :
 
-1. fontFamily: Menentukan jenis font yang akan digunakan.
-2. fontSize: Mengatur ukuran font.
-3. fontWeight: Mengatur ketebalan font (normal, bold, w100, w200, dll).
-4. fontStyle: Mengatur gaya font (normal, italic).
-5. color: Mengatur warna teks.
-6. backgroundColor: Mengatur warna latar belakang teks.
-7. decoration: Menambahkan dekorasi pada teks (underline, overline, lineThrough).
-8. decorationColor: Mengatur warna dekorasi.
-9. decorationStyle: Mengatur gaya dekorasi (solid, double, dotted, dashed).
-10. letterSpacing: Mengatur jarak antar karakter.
-11. wordSpacing: Mengatur jarak antar kata.
-12. height: Mengatur tinggi baris teks.
-13. locale: Mengatur lokal bahasa yang digunakan.
-14. foreground: Mengatur gradien warna teks.
-15. background: Mengatur gradien warna latar belakang teks.
+1. TextAlign.left: Menyelaraskan teks ke kiri.
+2. TextAlign.right: Menyelaraskan teks ke kanan.
+3. TextAlign.center: Menyelaraskan teks di tengah.
+4. TextAlign.justify: Menyelaraskan teks rata kiri-kanan.
+5. TextAlign.start: Menyelaraskan teks ke awal (kiri untuk bahasa kiri-ke-kanan, kanan untuk bahasa kanan-ke-kiri).
+6. TextAlign.end: Menyelaraskan teks ke akhir (kanan untuk bahasa kiri-ke-kanan, kiri untuk bahasa kanan-ke-kiri).
 
-Contoh penggunaan TextStyle:
-
-
-Text(
-  'Hello, World!',
-  style: TextStyle(
-    fontSize: 24.0,
-    fontWeight: FontWeight.bold,
-    color: Colors.blue,
-  ),
-),
-
-
-======================
-
-kode full nya : 
+contoh sederhana : 
 
 import 'package:flutter/material.dart';
 
@@ -69,30 +44,39 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         title: const Text('Judul Aplikasi'),
       ),
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
-                'Hello, World!',
-                style: TextStyle(
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blue,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 150,
+                  child: const Text(
+                    'Hello, Flutter!',
+                    textAlign: TextAlign.left,
+                  ),
                 ),
+                const SizedBox(width: 50),
+                Container(
+                  width: 150,
+                  child: const Text(
+                    'Hello, Flutter!',
+                    textAlign: TextAlign.right,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 50),
+            Container(
+              width: 150,
+              child: const Text(
+                'Hello, Flutter!',
+                textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 16.0),
-              IconButton(
-                icon: const Icon(Icons.favorite),
-                color: Colors.red,
-                onPressed: () {
-                  // Tambahkan aksi yang diinginkan saat ikon ditekan
-                    
-                },
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -100,4 +84,51 @@ class HomePage extends StatelessWidget {
 }
 
 
-=====================================================
+========================================================
+
+line break :
+
+ cara untuk membuat line break (baris baru) di dalam widget text:
+
+1. Menggunakan \n:
+
+Text('Baris pertama.\nBaris kedua.')
+
+2. Menggunakan Text.rich dan TextSpan:
+
+Text.rich(
+  TextSpan(
+    children: [
+      TextSpan(text: 'Baris pertama.'),
+      TextSpan(text: '\nBaris kedua.'),
+    ],
+  ),
+)
+
+3. Menggunakan Container dan Column:
+
+Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Text('Baris pertama.'),
+    Text('Baris kedua.'),
+  ],
+)
+
+4. Menggunakan SizedBox dengan tinggi tertentu:
+
+Column(
+  children: [
+    Text('Baris pertama.'),
+    SizedBox(height: 8.0), // Membuat jarak vertikal
+    Text('Baris kedua.'),
+  ],
+)
+
+=========================================================================
+
+
+
+
+
+
