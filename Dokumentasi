@@ -1,134 +1,36 @@
-text align & line break
+padding widget
 
-=========================
+===================
 
-text align  : 
+Dalam Flutter, padding adalah salah satu properti yang dapat digunakan untuk menambahkan jarak atau 
 
-Anda dapat mengatur penyelarasan teks menggunakan properti textAlign pada widget Text. :
+ruang kosong di sekitar widget. 
 
-1. TextAlign.left: Menyelaraskan teks ke kiri.
-2. TextAlign.right: Menyelaraskan teks ke kanan.
-3. TextAlign.center: Menyelaraskan teks di tengah.
-4. TextAlign.justify: Menyelaraskan teks rata kiri-kanan.
-5. TextAlign.start: Menyelaraskan teks ke awal (kiri untuk bahasa kiri-ke-kanan, kanan untuk bahasa kanan-ke-kiri).
-6. TextAlign.end: Menyelaraskan teks ke akhir (kanan untuk bahasa kiri-ke-kanan, kiri untuk bahasa kanan-ke-kiri).
+Nilai padding dapat diberikan dalam berbagai format, seperti:
 
-contoh sederhana : 
+1. EdgeInsets.all(16.0): Semua sisi memiliki padding 16 piksel.
+2. EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0): Horizontal (kiri dan kanan) 16 piksel, vertikal (atas dan bawah) 8 piksel.
+3. EdgeInsets.only(left: 16.0, right: 8.0): Hanya sisi kiri 16 piksel, sisi kanan 8 piksel.
 
-import 'package:flutter/material.dart';
+1. Menggunakan Padding widget:
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Contoh Nested Widget dan IconButton',
-      debugShowCheckedModeBanner: false,
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text('Judul Aplikasi'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: 150,
-                  child: const Text(
-                    'Hello, Flutter!',
-                    textAlign: TextAlign.left,
-                  ),
-                ),
-                const SizedBox(width: 50),
-                Container(
-                  width: 150,
-                  child: const Text(
-                    'Hello, Flutter!',
-                    textAlign: TextAlign.right,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 50),
-            Container(
-              width: 150,
-              child: const Text(
-                'Hello, Flutter!',
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-
-========================================================
-
-line break :
-
- cara untuk membuat line break (baris baru) di dalam widget text:
-
-1. Menggunakan \n:
-
-Text('Baris pertama.\nBaris kedua.')
-
-2. Menggunakan Text.rich dan TextSpan:
-
-Text.rich(
-  TextSpan(
-    children: [
-      TextSpan(text: 'Baris pertama.'),
-      TextSpan(text: '\nBaris kedua.'),
-    ],
-  ),
+Padding(
+  padding: const EdgeInsets.all(16.0),
+  child: Text('Ini adalah teks dengan padding'),
 )
 
-3. Menggunakan Container dan Column:
+2. Menggunakan properti padding pada widget:
 
-Column(
-  crossAxisAlignment: CrossAxisAlignment.start,
-  children: [
-    Text('Baris pertama.'),
-    Text('Baris kedua.'),
-  ],
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+  child: Text('Ini adalah teks dengan padding'),
 )
 
-4. Menggunakan SizedBox dengan tinggi tertentu:
+3. Menggunakan EdgeInsets:
 
-Column(
-  children: [
-    Text('Baris pertama.'),
-    SizedBox(height: 8.0), // Membuat jarak vertikal
-    Text('Baris kedua.'),
-  ],
+Padding(
+  padding: const EdgeInsets.only(left: 16.0, right: 8.0),
+  child: Text('Ini adalah teks dengan padding'),
 )
 
-=========================================================================
-
-
-
-
-
-
+===================================================================
