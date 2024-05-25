@@ -1,53 +1,30 @@
+Import Fonts
 
-bugs di flutter : gambar di android muncul di web gak muncul
+=============================
 
-=====================
-nemu solusinya : 
+1. https://fonts.google.com/
 
-ternyata harus di aset aja jangan bikin folder image lagi
+download Poppins
 
-code simple nya 
+2. edit yaml :
 
+flutter:
+  fonts:
+    - family: MyCustomFont
+      fonts:
+        - asset: assets/fonts/MyFont.ttf
+        # - asset: assets/fonts/MyFontBold.ttf
+        #   weight: 700
 
-import 'package:flutter/material.dart';
+3. simple code : 
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Contoh Nested Widget dan IconButton',
-      debugShowCheckedModeBanner: false,
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  final TextEditingController myController = TextEditingController();
-
-  HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(
-            'Capture.PNG',
-          ),
-         
-        ],
-      ),
-    );
-  }
-}
+Text(
+  'This is some text in my custom font',
+  style: TextStyle(
+    fontFamily: 'MyCustomFont',
+    fontSize: 18.0,
+  ),
+),
 
 
-====================================
+============================================
