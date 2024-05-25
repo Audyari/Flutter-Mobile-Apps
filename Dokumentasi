@@ -1,36 +1,50 @@
-padding widget
+MainAxisAlignment property
 
-===================
+==========================
 
-Dalam Flutter, padding adalah salah satu properti yang dapat digunakan untuk menambahkan jarak atau 
+axisAlignment adalah properti yang dapat digunakan pada widget Flex (seperti Row, Column, Wrap) 
+untuk mengontrol perataan konten sepanjang sumbu utama (main axis) widget.
 
-ruang kosong di sekitar widget. 
+Berikut adalah nilai-nilai yang dapat digunakan untuk axisAlignment:
 
-Nilai padding dapat diberikan dalam berbagai format, seperti:
+1. start: Meratakan konten di awal sumbu utama (kiri untuk Row, atas untuk Column).
+2. end: Meratakan konten di akhir sumbu utama (kanan untuk Row, bawah untuk Column).
+3. center: Meratakan konten di tengah sumbu utama.
+4. spaceBetween: Meratakan konten dengan jarak yang sama di antara elemen.
+5. spaceAround: Meratakan konten dengan jarak yang sama di sekitar elemen.
+6. spaceEvenly: Meratakan konten dengan jarak yang sama di antara dan di sekitar elemen.
 
-1. EdgeInsets.all(16.0): Semua sisi memiliki padding 16 piksel.
-2. EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0): Horizontal (kiri dan kanan) 16 piksel, vertikal (atas dan bawah) 8 piksel.
-3. EdgeInsets.only(left: 16.0, right: 8.0): Hanya sisi kiri 16 piksel, sisi kanan 8 piksel.
+1. start :
 
-1. Menggunakan Padding widget:
-
-Padding(
-  padding: const EdgeInsets.all(16.0),
-  child: Text('Ini adalah teks dengan padding'),
+Column(
+  mainAxisAlignment: MainAxisAlignment.start, // Rata atas
+  children: [
+    Text('Teks 1'),
+    Text('Teks 2'),
+    Text('Teks 3'),
+  ],
 )
 
-2. Menggunakan properti padding pada widget:
+2. end 
 
-Container(
-  padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-  child: Text('Ini adalah teks dengan padding'),
+Row(
+  mainAxisAlignment: MainAxisAlignment.end, // Rata kanan
+  children: [
+    Text('Teks 1'),
+    Text('Teks 2'),
+    Text('Teks 3'),
+  ],
 )
 
-3. Menggunakan EdgeInsets:
+3. spaceEvenly
 
-Padding(
-  padding: const EdgeInsets.only(left: 16.0, right: 8.0),
-  child: Text('Ini adalah teks dengan padding'),
+Wrap(
+  alignment: WrapAlignment.spaceEvenly, // Rata dengan jarak yang sama
+  children: [
+    Text('Teks 1'),
+    Text('Teks 2'),
+    Text('Teks 3'),
+  ],
 )
 
-===================================================================
+====================================================
