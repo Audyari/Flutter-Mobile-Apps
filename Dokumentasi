@@ -1,11 +1,10 @@
-remove cache & custom fonts
 
+Gap adalah solusi yang lebih baik dan efisien untuk menambahkan jarak/spasi dalam UI Flutter 
+dibandingkan dengan opsi lainnya seperti padding atau SizedBox.
 ==============================
 
-Menghapus Cache:
-Pada Android:
-Buka Android Studio.
-Buka menu File > Invalidate Caches/Restart.
-Pilih opsi "Invalidate and Restart" dan klik "Invalidate".
+https://pub.dev/packages/gap/example
+
+https://pub.dev/packages/gap/install
 
 ===================================
